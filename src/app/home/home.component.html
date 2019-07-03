@@ -16,18 +16,22 @@
 
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
-              <a class="nav-link">
+              <a class="nav-link"
+                [ngClass]="{'active': listConfig.type === 'feed'}"
+                (click)="setListTo('feed')">
                 내 피드
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">
+              <a class="nav-link"
+                [ngClass]="{'active': listConfig.type === 'all'}"
+                (click)="setListTo('all')">
                 전체 피드
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                피드
+            <li class="nav-item" [hidden]="!listConfig.filters.tag">
+              <a class="nav-link active">
+                <i class="ion-pound"></i> {{ listConfig.filters.tag }}
               </a>
             </li>
           </ul>
