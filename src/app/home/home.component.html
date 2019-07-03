@@ -1,0 +1,65 @@
+<div class="home-page">
+
+  <div class="banner">
+    <div class="container">
+      <h1 class="logo-front">Angular Project</h1>
+      <p><b>Toy</b></p>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row">
+
+      <!-- main -->
+      <div class="col-md-9">
+        <div class="feed-tggle">
+
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a class="nav-link">
+                내 피드
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                전체 피드
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">
+                피드
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+
+      <!-- side bar -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          <p>인기 태그</p>
+
+            <!-- tag-list -->
+            <div class="tag-list">
+              <a *ngFor="let tag of tags"
+                  (click)="setListTo('all', {tag: tag})"
+                  class="tag-default tag-pill">
+                {{ tag }}
+              </a>
+            </div>
+
+            <div [hidden]="tagsLoaded">
+              Loading tags...
+            </div>
+
+            <div [hidden]="!tagsLoaded || tags.length > 0">
+              No tags are here... yet
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
