@@ -7,16 +7,22 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
+import { ArticleModule } from './article/article.module';
+import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
-    CoreModule
+    CoreModule,
+    ArticleModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

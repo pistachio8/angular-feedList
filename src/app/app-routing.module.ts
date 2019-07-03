@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: 'settings',
-  //   loadChildren: './settings/settings.module#SettingsModule'
-  // }
+  {
+    path: 'article',
+    loadChildren: './article/article.module#ArticleModule' // path/to/file#exportName
+  }
 ];
 
 @NgModule({
