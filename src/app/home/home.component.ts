@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../core';
+import { UserService, IArticleListConfig } from '../core';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +10,18 @@ import { UserService } from '../core';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private router: Router,
-    private userService: UserService
+    private _router: Router,
+    private _userService: UserService
   ) {}
 
-  isAuthenticated: boolean = true;
-  listConfig: any = {
+  isAuthenticated: boolean = false;
+  listConfig: IArticleListConfig = {
     type: 'all',
     filters: {}
   };
+
+  tags: Array<string> = [];
+  tagsLoaded = false;
 
   ngOnInit() {
     if ( this.isAuthenticated ) {

@@ -1,7 +1,7 @@
-<div class="article-preivew">
-  <!-- <app-article-meta [article]="article">
-    <app-favorite-button></app-favorite-button>
-  </app-article-meta> -->
+<div class="article-preview">
+  <app-article-meta [article]="article">
+    <!-- <app-favorite-button></app-favorite-button> -->
+  </app-article-meta>
 
   <a [routerLink]="['/article', article.slug]" class="preview-link">
     <h1>{{ article.title }}</h1>

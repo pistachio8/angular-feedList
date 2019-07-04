@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IUser } from '../models';
+import { ApiService } from './api.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
 
   public isAuthenticated = new Observable<boolean>();
 
-  constructor() { }
+  constructor( 
+    private _api: ApiService,
+     
+    ) { }
 }

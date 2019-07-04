@@ -12,7 +12,7 @@
 
       <!-- main -->
       <div class="col-md-9">
-        <div class="feed-tggle">
+        <div class="feed-toggle">
 
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
@@ -37,7 +37,7 @@
           </ul>
         </div>
 
-        <!-- <app-article-list></app-article-list> -->
+        <app-article-list [limit]="10" [config]="listConfig"></app-article-list>
       </div>
 
       <!-- side bar -->
