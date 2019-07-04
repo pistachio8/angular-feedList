@@ -2,8 +2,8 @@
   <div class="container">
     <a class="navbar-brand" routerLink="/">Angular</a>
 
-    <!-- 로그아웃 유저 -->
-    <ul *appShowAuthed="false" class="nav navbar-nav pull-xs-right">
+    <!-- 로그아웃 유저 *appShowAuthed="false"-->
+    <ul class="nav navbar-nav pull-xs-right">
       <li class="nav-item">
         <a class="nav-link"
           routerLink="/">
@@ -28,8 +28,8 @@
       </li>
     </ul>
 
-    <!-- 로그인 유저 -->
-    <ul *appShowAuthed="true" class="nav navbar-nav pull-xs-right">
+    <!-- 로그인 유저 *appShowAuthed="true"-->
+    <ul  class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
           <a class="nav-link"
             routerLink="/"
@@ -56,12 +56,12 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link"
+          <!-- <a class="nav-link"
             routerLink="['/profile', currentUser.username]"
             routerActive="active">
             <img [src]="currentUser.image" *ngIf="currentUser.image" alt="user-pic" class="user-pic">
             {{ currentUser.username }}
-          </a>
+          </a> -->
         </li>
       </ul>
 
