@@ -50,7 +50,8 @@ export class ArticleListComponent {
         .subscribe( data => {
           this.loading = false;
           this.results = data.articles;
-
+          console.log( this.results );
+          
           this.totalPages = Array.from(new Array(Math.ceil(data.articlesCount / this.limit)), (val, index) => index + 1);
         });
 

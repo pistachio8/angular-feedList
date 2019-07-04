@@ -24,11 +24,13 @@ export class ApiService {
             .pipe( catchError( this.formatErrors ) );
   }
 
+  // update(all)
   put( path: string, body: Object = {} ): Observable<any> {
     return this._http.put( `${environment.api_url}${path}`, JSON.stringify( body ) )
                     .pipe( catchError( this.formatErrors ) );
   }
 
+  // upload
   post( path: string, body: Object = {}): Observable<any> {
     return this._http.post( `${environment.api_url}${path}`, JSON.stringify( body ) )
                     .pipe( catchError( this.formatErrors ) );

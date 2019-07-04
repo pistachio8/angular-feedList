@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UserService } from './services';
+import { 
+  UserService,
+  ArticleService,
+  ApiService,
+  JwtService
+} from './services';
 
 @NgModule({
   declarations: [],
@@ -11,6 +16,11 @@ import { UserService } from './services';
   exports: [
 
   ],
-  providers: [ UserService ]
+  providers: [ 
+    UserService,
+    ArticleService,
+    ApiService,
+    JwtService
+  ]
 })
 export class CoreModule { }
