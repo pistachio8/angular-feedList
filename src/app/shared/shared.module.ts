@@ -4,12 +4,14 @@ import { ArticleListComponent, ArticlePreviewComponent, ArticleMetaComponent } f
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FavoriteButtonComponent } from './buttons/favorite-button.component';
+import { FollowButtonComponent } from './buttons/follow-button.component';
 
 @NgModule({
   declarations: [
     ArticleListComponent, 
     ArticlePreviewComponent, 
-    ArticleMetaComponent,
+    ArticleMetaComponent, FavoriteButtonComponent, FollowButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     ArticleListComponent,
     ArticleMetaComponent,
     ArticlePreviewComponent,
+    FavoriteButtonComponent,
+    FollowButtonComponent,
     CommonModule,
     RouterModule,
     FormsModule,

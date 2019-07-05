@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
-import { ArticleModule } from './article/article.module';
 import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { SharedModule, HeaderComponent, FooterComponent } from './shared';
     AppRoutingModule,
     HomeModule,
     CoreModule,
-    ArticleModule,
     SharedModule
   ],
   providers: [],

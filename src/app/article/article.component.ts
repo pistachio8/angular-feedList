@@ -33,24 +33,27 @@ export class ArticleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     // prefetch article
     this._route.data.subscribe(
       (data: { article: IArticle }) => {
         this.article = data.article;
-
+        console.log(this._route.params);
+        
+        
         // load comments
         this.populateComments();
       }
     );
 
     // load current user data
-    // this._userService.currentUser.subscribe(
-    //   ( userData: IUser ) => {
-    //     this.currentUser = userData;
+    this._userService.currentUser.subscribe(
+      ( userData: IUser ) => {
+        this.currentUser = userData;
 
-    //     this.cnaModify = ( this.currentUser.username === this.article.author.username );
-    //   } 
-    // );
+        this.cnaModify = ( this.currentUser.username === this.article.author.username );
+      } 
+    );
   }
 
   onToggleFavorite( favorited: boolean ) {

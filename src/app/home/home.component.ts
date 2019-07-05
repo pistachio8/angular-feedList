@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService, IArticleListConfig } from '../core';
+import { UserService, IArticleListConfig, TagsService } from '../core';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _userService: UserService
+    private _userService: UserService,
+    private _tagsService : TagsService
   ) {}
 
   isAuthenticated: boolean = false;
@@ -29,6 +30,12 @@ export class HomeComponent implements OnInit {
     } else {
       this.setListTo('all');
     }
+
+    this._tagsService.getAll()
+    .subscribe( tags => {
+      this.tags = tags;
+      this.tagsLoaded = true;
+    });
     
   }
 

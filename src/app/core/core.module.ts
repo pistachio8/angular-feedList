@@ -5,7 +5,9 @@ import {
   UserService,
   ArticleService,
   ApiService,
-  JwtService
+  JwtService,
+  TagsService,
+  ProfileService
 } from './services';
 
 @NgModule({
@@ -20,7 +22,9 @@ import {
     UserService,
     ArticleService,
     ApiService,
-    JwtService
+    JwtService,
+    TagsService,
+    ProfileService
   ]
 })
 export class CoreModule { }

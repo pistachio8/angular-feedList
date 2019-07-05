@@ -20,7 +20,7 @@ export class ArticleListComponent {
 
   @Input() limit: number;
   @Input()
-  set config(config: IArticleListConfig ) {
+  set config( config: IArticleListConfig ) {
     if ( config ) {
       this.query = config;
       this.currentPage = 1;
@@ -50,7 +50,7 @@ export class ArticleListComponent {
         .subscribe( data => {
           this.loading = false;
           this.results = data.articles;
-          console.log( this.results );
+          // console.log( this.results );
           
           this.totalPages = Array.from(new Array(Math.ceil(data.articlesCount / this.limit)), (val, index) => index + 1);
         });
