@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { ArticleService, UserService } from '../core';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot, Resolve } from '@angular/router';
+import { ArticleService, UserService, IArticle } from '../core';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
-export class ArticleResolver {
+export class ArticleResolver implements Resolve<IArticle>{
 
   constructor(
     private _router: Router,
@@ -14,6 +14,7 @@ export class ArticleResolver {
   ) { }
 
   resolve( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ): Observable<any> {
+    
     return this._articleService.get( route.params['slug'] )
           .pipe( catchError( (error) => this._router.navigateByUrl('/') ));
 

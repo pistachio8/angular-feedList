@@ -37,9 +37,7 @@ export class ArticleComponent implements OnInit {
     // prefetch article
     this._route.data.subscribe(
       (data: { article: IArticle }) => {
-        this.article = data.article;
-        console.log(this._route.params);
-        
+        this.article = data.article;        
         
         // load comments
         this.populateComments();
