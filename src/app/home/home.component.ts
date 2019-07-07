@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     private _tagsService : TagsService
   ) {}
 
-  isAuthenticated: boolean = false;
+  isAuthenticated: boolean;
   listConfig: IArticleListConfig = {
     type: 'all',
     filters: {}
@@ -25,11 +25,20 @@ export class HomeComponent implements OnInit {
   tagsLoaded = false;
 
   ngOnInit() {
-    if ( this.isAuthenticated ) {
-      this.setListTo('feed');
-    } else {
-      this.setListTo('all');
-    }
+    this._userService.isAuthenticated.subscribe(
+      (authenticated) => {
+        this.isAuthenticated = authenticated;
+        console.log( authenticated);
+        
+        if ( authenticated ) {
+          this.setListTo('feed');
+        } else {
+          this.setListTo('all');
+        }
+
+      }
+    )
+    
 
     this._tagsService.getAll()
     .subscribe( tags => {
@@ -41,10 +50,10 @@ export class HomeComponent implements OnInit {
 
   setListTo( type: string = '', filters: Object = {}) {
     // 인증되지 않은 접근이면 로그인 화면으로 리다이렉트
-    // if ( type === 'feed' && ! this.isAuthenticated ) {
-    //   this.router.navigateByUrl('/login');
-    //   return;
-    // }
+    if ( type === 'feed' && ! this.isAuthenticated ) {
+      this._router.navigateByUrl('/login');
+      return;
+    }
 
     // 리스트 생성
     this.listConfig = { type: type, filters: filters };

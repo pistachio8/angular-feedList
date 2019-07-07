@@ -7,9 +7,9 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    // resolve: {
-    //   isAuthenticated: HomeAuthResolver
-    // }
+    resolve: {
+      isAuthenticated: HomeAuthResolver
+    }
   }
 ];
 

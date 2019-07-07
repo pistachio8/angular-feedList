@@ -7,8 +7,11 @@ import {
   ApiService,
   JwtService,
   TagsService,
-  ProfileService
+  ProfileService,
+  AuthGuardService
 } from './services';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpTokenInterceptor } from './interceptors';
 
 @NgModule({
   declarations: [],
@@ -19,12 +22,14 @@ import {
 
   ],
   providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     UserService,
     ArticleService,
     ApiService,
     JwtService,
     TagsService,
-    ProfileService
+    ProfileService,
+    AuthGuardService,
   ]
 })
 export class CoreModule { }

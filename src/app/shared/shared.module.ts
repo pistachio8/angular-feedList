@@ -6,12 +6,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FavoriteButtonComponent } from './buttons/favorite-button.component';
 import { FollowButtonComponent } from './buttons/follow-button.component';
+import { ShowAuthedDirective } from './show-authed.directive';
 
 @NgModule({
   declarations: [
     ArticleListComponent, 
     ArticlePreviewComponent, 
-    ArticleMetaComponent, FavoriteButtonComponent, FollowButtonComponent,
+    ArticleMetaComponent, 
+    FavoriteButtonComponent, 
+    FollowButtonComponent, 
+    ShowAuthedDirective,
   ],
   imports: [
     CommonModule,
@@ -31,6 +35,7 @@ import { FollowButtonComponent } from './buttons/follow-button.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ShowAuthedDirective,
   ]
 })
 export class SharedModule { }
