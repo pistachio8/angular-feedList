@@ -17,6 +17,7 @@ export class UserService {
   private _currentUserSubject = new BehaviorSubject<IUser>({} as IUser);
   public currentUser = this._currentUserSubject.asObservable().pipe( distinctUntilChanged());
 
+  // replaySubject : buffer size만큼 데이터 저장했다가 구독될때 buffer 반환
   private _isAuthenticatedSubject = new ReplaySubject<boolean>(1);
   public isAuthenticated = this._isAuthenticatedSubject.asObservable();
 
@@ -24,7 +25,7 @@ export class UserService {
     private _api: ApiService,
     private _http: HttpClient,
     private _jwtService: JwtService 
-    ) { }
+    ) {}
 
     populate(){
       if ( this._jwtService.getToken() ) {
