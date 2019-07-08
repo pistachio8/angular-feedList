@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
     this._userService.isAuthenticated.subscribe(
       (authenticated) => {
         this.isAuthenticated = authenticated;
-        console.log( authenticated);
         
         if ( authenticated ) {
           this.setListTo('feed');

@@ -8,19 +8,20 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule, HeaderComponent, FooterComponent } from './shared';
+import { ProfileModule } from './profile/profile.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent 
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HomeModule,
     CoreModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
