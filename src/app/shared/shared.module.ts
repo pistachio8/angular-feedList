@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FavoriteButtonComponent } from './buttons/favorite-button.component';
 import { FollowButtonComponent } from './buttons/follow-button.component';
 import { ShowAuthedDirective } from './show-authed.directive';
+import { ListErrorsComponent } from './list-errors.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ShowAuthedDirective } from './show-authed.directive';
     ArticleMetaComponent, 
     FavoriteButtonComponent, 
     FollowButtonComponent, 
-    ShowAuthedDirective,
+    ShowAuthedDirective, 
+    ListErrorsComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { ShowAuthedDirective } from './show-authed.directive';
     ReactiveFormsModule,
     HttpClientModule,
     ShowAuthedDirective,
+    ListErrorsComponent,
   ]
 })
 export class SharedModule { }
