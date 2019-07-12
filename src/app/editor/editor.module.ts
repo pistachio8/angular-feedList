@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { EditorRoutingModule } from './editor-routing.module';
+import { SharedModule } from '../shared';
+import { EditableArticleResolver } from './editable-article-resolver.service';
+import { EditorComponent } from './editor.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ EditorComponent ],
   imports: [
-    CommonModule,
-    EditorRoutingModule
-  ]
+    EditorRoutingModule,
+    SharedModule
+  ],
+  providers: [ EditableArticleResolver ]
 })
 export class EditorModule { }

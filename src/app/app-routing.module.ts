@@ -10,10 +10,10 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: './profile/profile.module#ProfileModule' 
   },
-  // {
-  //   path: 'editor',
-  //   loadChildren: './editor/editor.module#EditorModule' 
-  // }
+  {
+    path: 'editor',
+    loadChildren: './editor/editor.module#EditorModule' 
+  }
 ];
 
 @NgModule({

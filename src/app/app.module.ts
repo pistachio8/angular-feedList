@@ -10,13 +10,13 @@ import { CoreModule } from './core/core.module';
 import { SharedModule, HeaderComponent, FooterComponent } from './shared';
 import { AuthModule } from './auth/auth.module';
 import { EditorComponent } from './editor/editor.component';
+import { EditorModule } from './editor/editor.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    EditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +24,7 @@ import { EditorComponent } from './editor/editor.component';
     HomeModule,
     CoreModule,
     SharedModule,
-    AuthModule
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

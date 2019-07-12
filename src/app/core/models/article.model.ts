@@ -5,7 +5,7 @@ export interface IArticle {
     title: string;
     description: string;
     body: string;
-    togList: string[];
+    tagList: string[];
     createdAt: string;
     updatedAt: string;
     favorited: boolean;
