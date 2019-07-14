@@ -1,0 +1,70 @@
+<div class="settings-pages">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-xs-12">
+        <h1 class="text-xs-center">마이 페이지</h1>
+
+        <app-list-errors [errors]="errors"></app-list-errors>
+
+        <form [formGroup]="settingsForm" (ngSubmit)="submitForm()">
+          <fieldset [disabled]="isSubmitting">
+
+            <fieldset class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                placeholder="프로필 사진 URL"
+                formControlName="image">
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input 
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="사용자 이름"
+                formControlName="username">
+            </fieldset>
+
+            <fieldset class="form-group">
+              <textarea class="form-control form-control-lg"
+                rows="8"
+                placeholder="자기소개"
+                formControlName="bio">
+              </textarea>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input 
+                type="email"
+                class="form-control form-control-lg"
+                placeholder="이메일"
+                formControlName="email">
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input 
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="새 비밀번호"
+                formControlName="password">
+            </fieldset>
+
+            <button type="submit" class="btn btn-lg btn-primary pull-xs-right">
+              설정 업데이트
+            </button>
+
+          </fieldset>
+        </form>
+
+        <hr>
+        
+        <!-- logout button -->
+        <button class="btn btn-outline-danger"
+          (click)="logout()">
+          로그아웃
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

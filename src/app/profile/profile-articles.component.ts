@@ -30,8 +30,6 @@ export class ProfileArticlesComponent implements OnInit {
         };
 
         this.articlesConfig.filters.author = this.profile.username;
-        console.log( this.articlesConfig );
-
       }
     );
   }

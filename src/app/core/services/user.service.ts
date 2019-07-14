@@ -79,7 +79,7 @@ export class UserService {
 
     update( user ): Observable<IUser> {
       return this._api
-      .put( '/users' , { user })
+      .put( '/user' , { user })
       .pipe( map(
         data => {
           this._currentUserSubject.next( data.user );
